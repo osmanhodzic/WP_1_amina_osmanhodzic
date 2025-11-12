@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Kursevi IPI</title>
+
+<link rel="icon" type="image/x-icon" href="slike/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="slike/favicon.ico">
+
+  <link rel="stylesheet" href="izgled.css">
+  
+</head>
+
+<body>
+
+<header>
+<img src="slike/logo-ipi.png" alt="Kursevi IPI">
+</header>
+
+<article>
+
+<nav>
+    <a href="index.html">O kursevima</a>
+    <a href="popis.html">Popis kurseva</a>
+    <a href="raspored.html">Raspored kurseva</a>
+    <a href="studentfunzone.html">Student Fun Zone</a>
+    <a href="kontakt.html">Kontakt</a>
+    
+</nav>
+
+<h2>Kontakt</h2>
+
+<img src="slike/srce.jpg" alt="Srce" width="300">
+<p>Do IPI-ja se može doći javnim gradskim prevozom ili taksijem.</p>
+<p>Naša adresa je:</p>
+<p>Sveučilišni računski centar<br>
+Kulina bana br. 2 (Skver)<br>
+Tuzla<br>
+75000<br>
+Bosna i Hercegovina<br>
+<a href="mailto:info@ipi-akademija.ba">info@ipi-akademija.ba</a></p>
+
+
+
+<!--kontakt forma-->
+<h3>Kontaktirajte nas</h3>
+
+<div class="container">
+  <form id="contactForm" action="#">    
+    <label for="fname">Ime i prezime</label>
+    <input type="text" id="fname" name="firstname" placeholder="Unesite..." minlength="4" required>
+
+    <label for="email">Email adresa</label>
+    <input type="email" id="email" name="email" placeholder="Unesite..." required>
+
+    <label for="country">Status</label>
+    <select id="country" name="country" required>
+      <option value="">Odaberite</option>
+      <option value="srednjoskolac">Srednjoskolac</option>
+      <option value="student">Student</option>
+      <option value="profesor">Profesor</option>
+      <option value="roditelj">Roditelj</option>
+      <option value="ostalo">Ostalo</option>
+    </select>
+
+    <label for="phone">Telefon</label>
+    <div style="display:flex; gap:10px;">
+      <select id="phonecode" name="phonecode" style="width:120px;">
+        <option value="+387">+387 (BiH)</option>
+        <option value="+385">+385 (HR)</option>
+        <option value="+381">+381 (SRB)</option>
+        <option value="+382">+382 (CG)</option>
+        <option value="+386">+386 (SLO)</option>
+      </select>
+      <input type="text" id="phonenumber" name="phonenumber" placeholder="Unesite broj" required minlength="6" pattern="[0-9 ]+">
+    </div>
+
+    <label for="subject">Poruka</label>
+    <textarea id="subject" name="subject" placeholder="Posaljite upit, komentar, sugestije, pohvale..." style="height:200px" required minlength="10"></textarea>
+
+    <br>
+
+    <input type="checkbox" id="odgovor1" name="uslovi" value="uslovi" required>
+    <label for="odgovor1"> Terms and Conditions (Uslovi koristenja) </label><br>
+
+    <input type="checkbox" id="odgovor2" name="newsletter" value="obavijesti">
+    <label for="odgovor2"> Newsletter (Obavijesti) </label><br><br>
+
+    <input type="submit" value="Submit" id="submitBtn">
+  </form>
+</div>
+</article>
+
+<footer>&copy; Internacionalna poslovno-informaciona akademija Tuzla</footer>
+
+
+
+
+
+
+
+<script>
+const form = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+
+// Funkcija koja provjerava validnost forme
+function validateForm() {
+  const fname = form.fname.value.trim();
+  const email = form.email.value.trim();
+  const country = form.country.value;
+  const phone = form.phonenumber.value.trim();
+  const subject = form.subject.value.trim();
+  const terms = form.odgovor1.checked;
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const isValid = fname.length >= 4 &&
+                  emailRegex.test(email) &&
+                  country !== "" &&
+                  phone.length >= 6 &&
+                  /^[0-9 ]+$/.test(phone) &&
+                  subject.length >= 10 &&
+                  terms;
+
+  submitBtn.disabled = !isValid;
+  submitBtn.style.opacity = isValid ? "1" : "0.6";
+
+  return isValid;
+}
+
+// validacija se izvrsi kad korisnik unese ili promijeni
+form.querySelectorAll('input, select, textarea').forEach(input => {
+  input.addEventListener('input', validateForm);
+  input.addEventListener('change', validateForm);
+});
+
+
+validateForm();
+
+//ako su sva polja ispunjena i t&c prihvacen onda ide alert, jer je button disabled inace
+form.addEventListener("submit", function(e){
+  e.preventDefault(); 
+  alert("Poruka je poslana, hvala Vam " + form.fname.value.trim() + ".");
+  form.reset(); 
+  validateForm(); 
+});
+
+</script>
+
+
+</body>
+</html>

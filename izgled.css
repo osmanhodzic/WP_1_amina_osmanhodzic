@@ -1,0 +1,219 @@
+html
+{
+    background: #7b7775;
+}
+
+body
+{
+    font-size:12px;
+    font-family: Verdana, Arial, sans-serif;
+    color:#484645;
+    margin: 0;
+    line-height:1.6;
+    margin-bottom: blue;
+}
+
+header img
+{
+    width: 50%;
+    margin-left: 30px;
+    padding: 10px;
+}
+
+header, article
+{
+    width:80%;
+    margin: 0px auto;
+    background-color: white;
+}
+
+nav
+{
+
+    background-color: blue;      
+   
+}
+
+nav a, nav a:hover, nav a:visited, nav a:active
+
+{
+    color:white;
+    padding:10px 20px;
+    display:inline-block;
+    text-transform:uppercase;
+    
+}
+
+nav a
+{
+    
+    text-decoration: none;
+    
+}
+
+nav a:hover
+{
+    
+    text-decoration: underline;
+}
+
+nav ul
+{
+    list-style: none;
+    margin:0;
+}
+
+nav ul li
+{
+    
+    display:inline-block;
+    
+}
+
+a, a:hover, a:visited, a:active
+{
+    color: blue;
+    font-weight:bold;
+}
+
+h2, h3
+{
+    color: blue;
+}
+
+article
+{
+    padding :20px 40px;
+    box-sizing: border-box;
+    border-bottom: 2px solid blue;
+    min-height:600px;
+}
+
+article img
+{
+    float:right;
+    margin-right:15px;
+    margin-bottom:15px;
+}
+
+footer
+{
+    padding-top: 15px;
+    min-height: 30px;
+    background: #7b7775;
+    color:white;
+    text-align:center;
+}
+
+table, th, td {
+ border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+}
+
+
+
+td:nth-child(4)
+{
+    text-align: right;
+    padding-right: 5px;
+}
+
+tr:nth-child(odd)
+{
+    background-color: #e8e8e8;
+}
+
+iframe
+{
+    margin-top:20px;
+}
+
+fieldset
+{
+    width:50%;
+    margin-bottom:15px;
+    background-color:#f0f0f0;
+}
+
+fieldset legend
+{
+    color: blue;
+    font-weight:bold;
+}
+
+label
+{
+    display:inline-block;
+    width:30%;
+}
+
+input[type=radio] + label, input[type=checkbox] + label
+{
+    width:auto;
+}
+
+select, input[type=text], input[type=email], textarea
+{
+    box-sizing: border-box;
+    width:60%;
+    margin-bottom: 5px;
+}
+
+input[type=checkbox]
+{
+    margin-left:30%;
+}
+
+button
+{
+    background-color: blue;
+    color:white;
+    font-weight:bold;
+    border:none;
+    padding:10px 30px;
+    border-radius:5px;
+    
+}
+
+/*kontakt forma*/
+
+input[type=text], select, textarea, input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=checkbox]{
+  width: auto;
+  margin-right: 6px;
+  margin-left: 0;
+}
+
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  max-width: 50%;
+}
+
+
